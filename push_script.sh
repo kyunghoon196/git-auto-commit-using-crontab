@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 작업 디렉토리 경로 설정
-WORK_DIR=/Users/philip/Desktop/ct_note
+WORK_DIR=/Users/~
 
 # 작업 디렉토리로 이동
 cd "$WORK_DIR"
@@ -9,7 +9,7 @@ cd "$WORK_DIR"
 # 최신화
 git pull upstream master
 
-# git config core.quotepath false 명령어로 한국어 파일명도 가능
+# git config core.quotepath false 명령어를 통해 한국어 파일명도 가능
 
 # 최상위 변경 내용 add
 git add "$(git ls-files --others --exclude-standard | head -1)"
@@ -29,7 +29,7 @@ COMMIT_MESSAGE="add: ${TODAY} ${SITE_NAME}_${FILE_NUMBER} solved"
 
 git commit -m "${COMMIT_MESSAGE}"
 
-# 한번만 등록
-# git remote add origin_ssh git@github.com:kyunghoon196/ct_note.git
+# 한번만 등록 SSH로 로그인 하기 위함.
+# git remote add origin_ssh git@github.com:ID/REPO_NAME.git
 
 git push origin_ssh master
